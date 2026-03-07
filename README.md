@@ -46,14 +46,13 @@ Users should be able to:
 - Javascript
 
 ### What I learned
-I learnt about a very powerful selector named :not(). This is very helpful when defining active states. Sometimes the hover state and active states conflict with each other. This is very helpful is resolving such power. Here's a snippet that helped resolve the conflict:
-`
-
+I learnt about a very powerful selector named :not(). Sometimes the hover and active states conflict with each other. This is very helpful is resolving such conflict. Here's a snippet that helped resolve the conflict:
+```
 .rating > button:not(.active):hover{
     background: var(--rating-btn-hover);
     color: var(--text-color-dark);
 }
-`
+```
 This code snippet means that when a button is not active then apply properties in hover state. This eventually solves the conflict.
 ### Continued development
 This project is still work in progress. There are some issues related to mobile layout.
