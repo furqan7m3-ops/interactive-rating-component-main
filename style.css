@@ -1,8 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+*::after, *::before, *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg-color: hsl(216, 12%, 8%);
+    --card-color: hsl(213, 19%, 10%);
+    --card-color2:  hsl(212, 20%, 20%);
+    --text-color: hsl(217, 12%, 63%);
+    --text-color-dark:  hsl(216, 12%, 8%);
+    --rating-btn-bg:  hsl(212, 20%, 20%);
+    --rating-btn-active: hsl(25, 97%, 53%);
+    --rating-btn-hover: white;
+    --white: hsl(0, 0%, 100%);
+    --accent-color: hsl(25, 97%, 53%);
+}
+
+
+
+body{
+    font-family: 'Overpass', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--white);
+}
+
+main{
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
+    padding: 0.8rem;
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+.rating{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    width:100%;
+    margin-inline: auto;
+    /* border: 1px solid white; */
+    padding-block: 0.5rem;
+}
+
+
+.card-content > img{
+    max-width: 100%;
+    height:auto;
+    margin-bottom: 1rem;
+}
+
+.rating > button{
+    border-radius: 50%;
+    border:0;
+    display: grid;
+    place-content: center;
+    background: var(--rating-btn-bg);
+    color: var(--text-color);
+    padding: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.rating > button:hover{
+    background: var(--rating-btn-hover);
+    color: var(--text-color-dark);
+}
+
+.hidden{
+    display: none;
+}
+
+.card{
+    background: linear-gradient(15deg, var(--card-color), var(--card-color2));
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+    max-width: 30rem;
+    display: grid;
+    margin-inline: auto;
+}
+
+.card > *+*{
+    margin-top: 1rem;
+}
+
+.card-content h2{
+    margin-bottom: 0.5rem;
+}
+.card-content p{
+    color: var(--text-color);
+}
+
+.submit-btn{
+    background-color: var(--accent-color);
+    color: var(--text-color-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    border:0;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border:0;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.2);   
 }
