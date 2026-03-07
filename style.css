@@ -9,7 +9,7 @@
 :root{
     --bg-color: hsl(216, 12%, 8%);
     --card-color: hsl(213, 19%, 10%);
-    --card-color2:  hsl(212, 20%, 20%);
+    --card-color2:  hsl(212, 20%, 18%);
     --text-color: hsl(217, 12%, 63%);
     --text-color-dark:  hsl(216, 12%, 8%);
     --rating-btn-bg:  hsl(212, 20%, 20%);
@@ -46,8 +46,8 @@ main{
 .rating{
     display: flex;
     justify-content: space-evenly;
-    gap: 1rem;
-    width:100%;
+    gap: 1.8rem;
+    max-width:100%;
     margin-inline: auto;
     /* border: 1px solid white; */
     padding-block: 0.5rem;
@@ -68,16 +68,24 @@ main{
     background: var(--rating-btn-bg);
     color: var(--text-color);
     padding: 0;
-    width: 3.2rem;
-    height: 3.2rem;
+    width: clamp(2.5rem,calc(0.3rem + 1.1vw), 3.8rem);
+    height: clamp(2.5rem,calc(0.3rem + 1.1vw), 3.8rem);
+    gap: clamp(0.1rem, calc(0.1rem + 1vw), 1.5rem);
     font-weight: bold;
     cursor: pointer;
 }
 
-.rating > button:hover{
+.rating > button:not(.active):hover{
     background: var(--rating-btn-hover);
     color: var(--text-color-dark);
 }
+
+
+.rating > button.active{
+    background-color: var(--accent-color);
+    color: var(--text-color-dark);
+}
+
 
 .hidden{
     display: none;
@@ -88,9 +96,9 @@ main{
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: 0 0 1rem rgba(0,0,0,0.2);
-    max-width: 30rem;
     display: grid;
     margin-inline: auto;
+    width:30rem;
 }
 
 .card > *+*{
@@ -107,11 +115,50 @@ main{
 .submit-btn{
     background-color: var(--accent-color);
     color: var(--text-color-dark);
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     border:0;
     padding: 0.5rem;
     border-radius: 2rem;
+    width: 85%;
+    justify-self: center;
     border:0;
     box-shadow: 0 0 1rem rgba(0,0,0,0.2);   
+}
+
+.thankyou:not(.hidden){
+    display:grid;
+    justify-items:center;
+    gap: 1rem;
+}
+
+.thankyou:not(.hidden) > img{
+    max-width: 100%;
+    height:auto;
+}
+
+
+.thankyou:not(.hidden) > p{
+    color: var(--text-color);
+    max-width:80%;
+    text-align: center;
+}
+
+.thankyou:not(.hidden) > .selected-rating{
+    color: var(--accent-color);
+    font-weight: 300;
+    background-color: hsl(212, 20%, 18%);
+    padding: 0.5rem;
+    font-size:0.7rem;
+    border-radius: 1rem;
+}
+
+@media screen and (max-width:477px){
+    :root{
+        font-size: 10px;
+    }
+
+    .card{
+        width: clamp(10vw,80%,35rem);
+    }
 }
