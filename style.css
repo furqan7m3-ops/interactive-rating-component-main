@@ -155,10 +155,10 @@ main{
 
 @media screen and (max-width:477px){
     :root{
-        font-size: 10px;
+        font-size: 9px;
     }
 
-    .card{
+    /* .card{
         width: clamp(10vw,80%,35rem);
-    }
+    } */
 }
