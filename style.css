@@ -153,6 +153,12 @@ main{
     border-radius: 1rem;
 }
 
+.error-message{
+    color: hsl(0, 100%, 63%);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
 @media screen and (max-width:477px){
     :root{
         font-size: 9px;
