@@ -168,3 +168,9 @@ main{
         width: clamp(10vw,80%,35rem);
     } */
 }
+
+@media screen and (max-width:280px){
+    :root{
+        font-size: 8px;
+    }
+}
